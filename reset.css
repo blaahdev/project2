@@ -1,0 +1,85 @@
+@font-face {
+  font-family: "aloja";
+  src: url("./assets/Aloja-Light.woff") format("woff");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-black: #000000;
+  --bg-white: #ffffff;
+  font-size: 16px;
+}
+
+body {
+  font-size: 2rem;
+  line-height: 1.5; /* Improve readability */
+  font-family: "Nanum Pen Script", cursive;
+  background-color: var(--bg-white);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 400px) {
+  body {
+    font-size: 1rem;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "aloja", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+ul,
+ol {
+  list-style: none; /* Remove bullet points */
+}
+
+a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Use inherited color */
+}
+
+table {
+  border-collapse: collapse; /* Remove gaps between cells */
+  width: 100%; /* Make tables responsive */
+}
+
+th,
+td {
+  padding: 0; /* Remove default padding */
+  text-align: left; /* Align text to the left */
+}
+
+img {
+  width: 100%;
+  max-width: 100%; /* Prevent images from overflowing */
+  height: auto; /* Maintain aspect ratio */
+}
+
+video {
+  max-width: 100%; /* Make videos responsive */
+  height: auto;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit; /* Ensure consistent font */
+  font-size: inherit; /* Use inherited font size */
+}

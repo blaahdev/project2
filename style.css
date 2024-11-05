@@ -1,0 +1,155 @@
+/* --- GLOBAL STYLES */
+button {
+  padding: 1% 5%;
+  background-color: var(--bg-white);
+  font-family: "aloja", "sans-serif";
+  text-transform: uppercase;
+  cursor: pointer;
+  border: 4px solid var(--bg-black);
+  border-radius: 18px;
+  min-height: 78px;
+  min-width: 249px;
+  font-size: 1.25em;
+  transition: all ease-in 0.2s;
+}
+
+button:hover {
+  background-color: var(--bg-black);
+  color: var(--bg-white);
+  transition: all ease-in 0.2s;
+}
+
+button:active {
+  transform: scale(1.1);
+  transition: all ease-in 0.1s;
+}
+
+.border {
+  border: 4px solid var(--bg-black);
+  border-radius: 18px;
+}
+
+/* ------ */
+
+body {
+  height: 100vh;
+  max-height: 100vh;
+  width: 100vw;
+  max-width: 100vw;
+  background-image: url("./assets/bg.png");
+  padding: 4% 5%;
+
+  max-width: 1240px;
+  margin: auto;
+  position: relative;
+}
+
+.book {
+  width: 100%;
+  height: 100%;
+  position: relative; /* Allows for positioning the border image */
+  box-sizing: border-box;
+  background-image: url("./assets/paper.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 20px solid transparent; /* Create space for the border to appear */
+  border-image: url("./assets/book.svg") 30 stretch; /* Use image as border */
+  padding: 1% 1%;
+}
+
+.book-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1%;
+}
+
+.nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 20%;
+  font-family: "aloja", "cursive";
+  font-size: 60%;
+  text-transform: lowercase;
+}
+
+.nav li {
+  position: relative;
+  padding-bottom: 4px;
+}
+.nav li:hover {
+  border-bottom: 2px solid var(--bg-black);
+  padding-bottom: 2px;
+}
+
+.sections {
+  height: 100%;
+  padding: 1%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1%;
+}
+
+.section-1 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  flex: 2;
+}
+
+.box {
+  min-height: 100%;
+  aspect-ratio: 1/1;
+  display: grid;
+  place-content: center;
+  padding: 1%;
+}
+
+.section-2 {
+  border-top: 4px solid var(--bg-black);
+  border-bottom: 4px solid var(--bg-black);
+  padding: 1%;
+  text-overflow: ellipsis;
+  width: 100%;
+  flex: 1;
+}
+
+.section-3 {
+  padding: 1%;
+  width: 100%;
+  background-image: url("./assets/cat1.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.logo {
+  width: 100px;
+  position: absolute;
+  top: -11%;
+  right: -11%;
+  cursor: pointer;
+}
+
+.logo:hover {
+  transform: rotate(360deg);
+  transition: transform linear 1s;
+}
+
+.logo:active {
+  transform: scale(1.1);
+  transition: transform linear 0.2s;
+}
