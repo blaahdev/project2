@@ -1,4 +1,7 @@
-/* --- GLOBAL STYLES */
+/* --- COMMON STYLES */
+body {
+  overflow-y: auto;
+}
 button {
   padding: 1% 5%;
   background-color: var(--bg-white);
@@ -13,13 +16,34 @@ button {
   transition: all ease-in 0.2s;
 }
 
+button.btn-outline {
+  background-color: transparent;
+  border: 4px solid var(--bg-white);
+  color: var(--bg-white);
+}
+
+button.btn-contained {
+  background-color: var(--bg-black);
+  color: var(--bg-white);
+}
+
 button:hover {
   background-color: var(--bg-black);
   color: var(--bg-white);
   transition: all ease-in 0.2s;
 }
 
-button:active {
+button.btn-text:hover {
+  background-color: transparent;
+  border: 4px solid var(--bg-black);
+  color: var(--bg-black);
+  transition: all ease-in 0.2s;
+}
+
+button:active,
+button.btn-text:active {
+  background-color: var(--bg-white);
+  color: var(--bg-black);
   transform: scale(1.1);
   transition: all ease-in 0.1s;
 }
@@ -29,33 +53,55 @@ button:active {
   border-radius: 18px;
 }
 
-/* ------ */
+.book {
+  min-width: 1070px;
+  /* min-height: 703px; */
+}
+
+/* --- GLOBAL STYLES */
 
 body {
-  height: 100vh;
-  max-height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   max-width: 100vw;
   background-image: url("./assets/bg.png");
-  padding: 4% 5%;
-
+  padding: 3% 8%;
   max-width: 1240px;
   margin: auto;
   position: relative;
 }
+
+/* ------ MAIN + LOGIN-------- */
 
 .book {
   width: 100%;
   height: 100%;
   position: relative; /* Allows for positioning the border image */
   box-sizing: border-box;
-  background-image: url("./assets/paper.svg");
+  /* background-image: url("./assets/paper.svg"); */
+  background: var(--bg-white);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   border: 20px solid transparent; /* Create space for the border to appear */
   border-image: url("./assets/book.svg") 30 stretch; /* Use image as border */
   padding: 1% 1%;
+  overflow: hidden;
+  position: relative;
+}
+
+.book::after {
+  content: "";
+  height: 100%;
+  width: 1px;
+  /* background-color: var(--bg-black); */
+  background-image: url("./assets/paper.svg");
+  background-color: rgba(255, 255, 255, 0.486);
+  background-blend-mode: overlay;
+  opacity: 20%;
+  position: absolute;
+  top: 0;
+  left: 50%;
 }
 
 .book-content {
@@ -64,6 +110,37 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1%;
+  transition: transform ease-in-out 1s;
+  background-image: url("./assets/paper.svg");
+  background-color: rgba(255, 255, 255, 0.486);
+  background-blend-mode: overlay;
+  position: relative;
+}
+
+.book-content::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  background-color: var(--bg-black);
+  top: 0;
+  left: 0;
+  position: absolute;
+  transition: width ease-in-out 1s, height;
+}
+
+.book-content.active::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: width ease-in-out 1s, height;
+}
+
+.book-content.active {
+  transform: translateX(-50%);
+  transition: transform ease-in-out 1s 1s;
 }
 
 .nav ul {
@@ -93,6 +170,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 1%;
+  position: relative;
 }
 
 .section-1 {
@@ -105,12 +183,27 @@ body {
   flex: 2;
 }
 
+.section-1 h1 {
+  font-size: 200%;
+}
 .box {
   min-height: 100%;
   aspect-ratio: 1/1;
   display: grid;
   place-content: center;
   padding: 1%;
+  text-align: center;
+}
+
+.box span {
+  padding: none;
+  margin: none;
+}
+
+.box > .big {
+  font-size: 150%;
+  text-transform: uppercase;
+  margin-top: -20px;
 }
 
 .section-2 {
@@ -119,28 +212,44 @@ body {
   padding: 1%;
   text-overflow: ellipsis;
   width: 100%;
-  flex: 1;
+  text-align: center;
+  font-size: 180%;
 }
 
 .section-3 {
   padding: 1%;
   width: 100%;
-  background-image: url("./assets/cat1.svg");
+  /* background-image: url("./assets/cat1.svg"); */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   flex: 4;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+}
+
+.section-3 > * {
+  padding: 0 2%;
+  font-size: 100%;
+}
+
+.section-3-2 {
+  border-right: 4px solid var(--bg-black);
+  border-left: 4px solid var(--bg-black);
+  display: grid;
+  place-content: center;
+  gap: 20px;
+}
+
+.section-3-2 img {
+  max-height: 40vh;
 }
 
 .logo {
   width: 100px;
   position: absolute;
-  top: -11%;
-  right: -11%;
+  top: 1%;
+  right: -5%;
   cursor: pointer;
 }
 
@@ -152,4 +261,116 @@ body {
 .logo:active {
   transform: scale(1.1);
   transition: transform linear 0.2s;
+}
+
+@media (max-width: 1538px) {
+  .logo {
+    display: none;
+  }
+}
+
+/* ------ LOGIN: TO BE REMOVES-------- */
+
+.login .section-3 {
+  border-top: 4px solid var(--bg-black);
+  background-image: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-content: center;
+  text-align: center;
+  padding: 0;
+  gap: 20px;
+}
+
+.login .section-3-1 {
+  background-color: var(--bg-black);
+}
+
+/* ------ LOGIN: OTOKE MY HEAD HURTS HOW TO ANIMATE THIS NICELY-------- */
+.section-4 {
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 50%;
+  height: 100%;
+  z-index: 5;
+  color: var(--bg-white);
+  display: grid;
+  place-content: center;
+  text-align: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.section-4 img {
+  width: 80%;
+  filter: drop-shadow(1px 1px 1px white);
+  margin: auto;
+}
+
+.section-4 button {
+  width: 50%;
+  margin: auto;
+}
+
+.book-content.active .section-4 {
+  left: 50%;
+  transition: left ease-in-out 1s 2s;
+}
+
+.section-5 {
+  position: absolute;
+  top: 0;
+  right: -50%;
+  width: 50%;
+  height: 100%;
+  z-index: 5;
+  color: var(--bg-black);
+  display: grid;
+  place-content: center;
+  text-align: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.section-5 form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 20px;
+  width: 100%;
+}
+
+.section-5 .form-control {
+  position: relative;
+  width: fit-content;
+  width: 100%;
+}
+
+.section-5 i {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  color: var(--bg-white);
+  font-size: 20px;
+  transform: translateY(-50%);
+}
+
+.section-5 input {
+  background-color: var(--bg-black);
+  color: var(--bg-white);
+  padding: 2px;
+  border: none;
+  border-radius: 20px;
+  padding-left: 100px;
+  width: 100%;
+}
+
+.section-5 input::placeholder {
+  color: var(--bg-white);
+}
+
+.book-content.active .section-5 {
+  right: -50%;
+  transition: right ease-in-out 1s 2.2s;
 }
