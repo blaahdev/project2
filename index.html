@@ -2,7 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+    <meta name="viewport" content="user-scalable=no" />
     <title>Mew Mew</title>
     <!-- CSS STYLE -->
     <link rel="stylesheet" href="style.css" />
@@ -27,79 +28,87 @@
     <span class="logo">
       <img src="./assets/logo-black.svg" alt="logo" />
     </span>
-    <!-- ----------- FOR MAIN PAGE --------------- -->
-    <div class="book">
-      <div id="main-book-content" class="book-content active">
-        <nav class="nav">
-          <ul>
-            <li>
-              <a href="#">home</a>
-            </li>
-            <li>
-              <a href="#">about</a>
-            </li>
-          </ul>
-        </nav>
-        <div class="sections border">
-          <header class="section-1">
-            <div class="box border date">
-              <span id="date">05</span>
-              <span id="month" class="big"> Nov </span>
-            </div>
-            <h1>mew mew</h1>
-            <div class="box border day">
-              <span class="big" id="day"> Tues </span>
-            </div>
-          </header>
-          <section class="section-2">
-            <p>A world of purrs, paws, and memes</p>
-          </section>
-          <section class="section-3">
-            <div class="section-3-1">
-              <p>Cat lovers unite!</p>
-              <p>Sign up today and let the meows and laughs begin!</p>
-            </div>
-            <div class="section-3-2">
-              <img src="./assets/cat-1.svg" alt="cat" />
-              <button class="cta-btn btn-contained">Sign Up</button>
-            </div>
-            <div class="section-3-3">
-              <p>Join the Purrfect Community!</p>
-              <p>Mew Mew is the place</p>
-            </div>
-          </section>
-          <section class="section-4">
-            <img src="./assets/cat4.svg" alt="cat" />
-            <h3>
-              Hello, <br />
-              fwen
-            </h3>
-            <p>Enter your personal details and start your journey with us</p>
-            <button class="cta-btn btn-outline">Back</button>
-          </section>
-          <div class="section-5">
-            <h4>Create an Acc</h4>
-            <form>
-              <div class="form-control">
-                <i class="fa-solid fa-user"></i>
-                <input type="text" placeholder="Name" />
+    <main>
+      <!-- ----------- FOR MAIN PAGE --------------- -->
+      <div class="book">
+        <div id="main-book-content" class="book-content active">
+          <nav class="nav">
+            <ul>
+              <li>
+                <a href="#">home</a>
+              </li>
+              <li>
+                <a href="#">about</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="sections border">
+            <header class="section-1">
+              <div class="box border date">
+                <span id="date">05</span>
+                <span id="month" class="big"> Nov </span>
               </div>
-              <div class="form-control">
-                <i class="fa-solid fa-envelope"></i>
-                <input type="email" placeholder="Email" />
+              <h1>mew mew</h1>
+              <div class="box border day">
+                <span class="big" id="day"> Tues </span>
               </div>
-              <div class="form-control">
-                <i class="fa-solid fa-lock"></i>
-                <input type="password" placeholder="Password" />
+            </header>
+            <section class="section-2">
+              <p>A world of purrs, paws, and memes</p>
+            </section>
+            <section class="section-3">
+              <div class="section-3-1">
+                <p>Cat lovers unite!</p>
+                <p>Sign up today and let the meows and laughs begin!</p>
               </div>
-              <button class="cta-btn btn-contained" type="button">
-                Sign Up
-              </button>
-            </form>
+              <div class="section-3-2">
+                <img src="./assets/cat-1.svg" alt="cat" />
+                <button class="cta-btn btn-contained">Sign Up</button>
+              </div>
+              <div class="section-3-3">
+                <p>Join the Purrfect Community!</p>
+                <p>Mew Mew is the place</p>
+              </div>
+            </section>
+            <section class="section-4">
+              <img src="./assets/cat4.svg" alt="cat" />
+              <h3>
+                Hello, <br />
+                fwen
+              </h3>
+              <p>Enter your personal details and start your journey with us</p>
+              <button class="cta-btn btn-outline">Back</button>
+            </section>
+            <div class="section-5">
+              <h4>Create an Acc</h4>
+              <form>
+                <div class="form-control">
+                  <i class="fa-solid fa-user"></i>
+                  <input type="text" placeholder="Name" />
+                </div>
+                <div class="form-control">
+                  <i class="fa-solid fa-envelope"></i>
+                  <input type="email" placeholder="Email" />
+                </div>
+                <div class="form-control">
+                  <i class="fa-solid fa-lock"></i>
+                  <input type="password" placeholder="Password" />
+                </div>
+                <button class="cta-btn btn-contained" type="button">
+                  Sign Up
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <script src="index.js"></script>
+      <script src="index.js"></script>
+    </main>
+    <!-- START OF FOOTER -->
+    <footer>
+      <h6>Code a Day Development</h6>
+      <img src="./assets/logo-dark.svg" alt="blaahco-logo" />
+      <span>Copyright © <span id="copyright-date"></span></span>
+    </footer>
   </body>
 </html>

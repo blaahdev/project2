@@ -20,6 +20,8 @@ const bookContent = document.getElementById("main-book-content");
 const date = document.getElementById("date");
 const month = document.getElementById("month");
 const day = document.getElementById("day");
+const copyright = document.getElementById("copyright-date");
+
 // ---- RENDERS
 // ---- ANIMATE
 // ---- EVENT LISTENERS
@@ -33,4 +35,6 @@ const today = new Date();
 date.innerText = today.getDate();
 month.innerText = MONTHS[today.getMonth()];
 day.innerText = DAY[today.getDay()];
+copyright.innerHTML = today.getFullYear();
+
 // --- EXECUTES

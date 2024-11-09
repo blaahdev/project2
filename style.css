@@ -1,5 +1,5 @@
 /* --- COMMON STYLES */
-body {
+main {
   overflow-y: auto;
 }
 button {
@@ -53,18 +53,16 @@ button.btn-text:active {
   border-radius: 18px;
 }
 
-.book {
-  min-width: 1070px;
-  /* min-height: 703px; */
-}
-
 /* --- GLOBAL STYLES */
 
 body {
+  background-image: url("./assets/bg.png");
+}
+
+main {
   min-height: 100vh;
   width: 100vw;
   max-width: 100vw;
-  background-image: url("./assets/bg.png");
   padding: 3% 8%;
   max-width: 1240px;
   margin: auto;
@@ -249,7 +247,7 @@ body {
   width: 100px;
   position: absolute;
   top: 1%;
-  right: -5%;
+  right: 1%;
   cursor: pointer;
 }
 
@@ -261,12 +259,6 @@ body {
 .logo:active {
   transform: scale(1.1);
   transition: transform linear 0.2s;
-}
-
-@media (max-width: 1538px) {
-  .logo {
-    display: none;
-  }
 }
 
 /* ------ LOGIN: TO BE REMOVES-------- */
@@ -374,3 +366,32 @@ body {
   right: -50%;
   transition: right ease-in-out 1s 2.2s;
 }
+
+/* START OF FOOTER */
+footer {
+  min-height: 120vh;
+  width: 100vw;
+  z-index: 200;
+  position: absolute;
+  background-color: var(--bg-black);
+  color: var(--bg-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+footer > img {
+  max-height: 70vh;
+}
+
+footer > span {
+  opacity: 0.4;
+  font-family: "Mulish", sans-serif;
+  font-size: 50%;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+}
+/* END OF FOOTER */
